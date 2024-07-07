@@ -2,7 +2,6 @@
 let theclick = document.querySelector(".click");
 let theInput = document.querySelector(".text");
 let theConten = document.querySelector(".element");
-let mymassage = document.querySelector(".mymassage");
 let thecounter1 = document.querySelector(".count1  span");
 let thecounter2 = document.querySelector(".count2  span");
 let removeAll = document.querySelector('.removeAll');
@@ -19,20 +18,20 @@ theclick.onclick = () => {
 }
 
 
-function elementMasseg(){
+function elementMasseg() {
 
-  if(theInput.value === ''){
+  if (theInput.value === '') {
     console.log('not')
-    
-  }else{
+
+  } else {
 
     let mymassage = document.querySelector(".mymassage");
 
-    if(document.body.contains(document.querySelector(".mymassage"))){
+    if (document.body.contains(document.querySelector(".mymassage"))) {
 
       mymassage.remove();
     }
- 
+
     let div = document.createElement('div');
 
     div.className = 'content';
@@ -63,18 +62,19 @@ function elementMasseg(){
 
     theCounter();
 
-   
+
   }
 }
 
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
   if (e.target.classList.contains("Delete")) {
     e.target.parentElement.remove();
 
-    if(theConten.childElementCount === 0){
+    if (theConten.childElementCount === 0) {
 
       taskMasseg();
+
     }
 
     geleteElement();
@@ -84,13 +84,13 @@ document.addEventListener('click', function(e) {
 
 });
 
-function taskMasseg(){
+function taskMasseg() {
 
   let div = document.createElement('div');
 
   let text = document.createTextNode("No Task To show");
 
-  div.className = 'content';
+  div.className = 'mymassage';
 
   div.appendChild(text);
 
@@ -100,10 +100,10 @@ function taskMasseg(){
 }
 
 
-function theCounter(){
+function theCounter() {
 
-  thecounter1.innerText = document.querySelectorAll(".element .content").length;
-  
+  thecounter1.innerHTML = document.querySelectorAll(".element .content").length;
+
 }
 
 
@@ -120,7 +120,7 @@ function myLocalStorig() {
       let myjson = JSON.stringify(myArray);
 
       localStorage.setItem("test", myjson);
-    
+
     } else {
 
       console.log('not toadd localStorig')
@@ -177,10 +177,10 @@ function geleteElement() {
 
     let myjson = JSON.stringify(myArray);
 
-    
-    localStorage.setItem('test', myjson); 
 
-    
+    localStorage.setItem('test', myjson);
+
+
 
   } else {
     console.log("not");
@@ -198,6 +198,8 @@ removeAll.onclick = () => {
   theConten.innerHTML = "";
 
   myArray = [];
+
+  theCounter();
 }
 
 

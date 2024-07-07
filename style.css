@@ -1,6 +1,7 @@
-* { 
- box-sizing: border-box; 
- }
+* {
+    box-sizing: border-box;
+    outline: none;
+}
 
 .container {
     margin: 20px auto;
@@ -31,6 +32,7 @@
     margin-bottom: 10px;
     padding: 15px;
     font-size: 20px;
+    border-radius: 8px;
     font-weight: bold;
 }
 
@@ -40,7 +42,7 @@
 
 .click {
     background-color: #007bff;
-    padding: 20px;
+    padding: 12px;
     font-size: 20px;
     font-weight: bold;
     color: #fff;
@@ -49,8 +51,16 @@
     border-radius: 8px;
 }
 
+.click:hover{
+    transform: scale(1.1);
+    transition: .4s;
+}
+
 .mymassage {
-    margin-top: 10px;
+    background-color: white;
+    text-align: left;
+    font-size: 20px;
+    padding: 8px;
 }
 
 .content {
@@ -60,14 +70,21 @@
     align-items: center;
     background-color: #fff;
     font-size: 30px;
+    padding: 8px;
 }
 
 .Delete {
     background-color: #03045e;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
     color: white;
     border-radius: 8px;
+}
+
+.Delete:hover{
+    transform: scale(1.1);
+    transition: .4s;
+    background-color: #E91E63;
 }
 
 .counter {
@@ -102,7 +119,12 @@
     padding: 15px;
     border-radius: 8px;
     font-size: 20px;
-} 
+}
+
+.removeAll:hover {
+    transform: scale(1.1);
+    transition: .4s;
+}
 
 
 /* Media Queries */
